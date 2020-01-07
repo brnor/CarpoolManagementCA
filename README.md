@@ -51,7 +51,7 @@ serve -s -l 3000 ./CarpoolManagementCA/src/WebUI/bin/Release/netcoreapp3.1/publi
 - `/api/rideshares`
   - GET - gets a list of all rideshares
   - POST - creates a new rideshare
-- '/api/rideshares/{id}`
+- `/api/rideshares/{id}`
   - GET - gets a rideshare detailed info by ID
   - PUT - updates a rideshare by ID
   - DELETE - deletes a rideshare by ID
