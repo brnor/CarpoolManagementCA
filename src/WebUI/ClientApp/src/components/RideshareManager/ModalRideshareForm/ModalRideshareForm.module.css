@@ -1,0 +1,21 @@
+label {
+    margin: 5px;
+    width: 30%;
+}
+
+.rdt {
+    width: auto;
+}
+
+input {
+    display: inline-block;
+    width: auto;
+}
+
+.DateTime {
+    display: inline-block;
+}
+
+select {
+    display: inline-block;
+}
