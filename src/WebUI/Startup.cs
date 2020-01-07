@@ -66,7 +66,7 @@ namespace WebUI
                 .AllowAnyHeader());
 
             app.UseCustomExceptionHandler();
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
