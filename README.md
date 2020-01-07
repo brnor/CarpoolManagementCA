@@ -48,4 +48,4 @@ Please note that HTTPS redirection is disabled and the project currently uses HT
 - `/api/employees/{id}`
   - GET - gets an employee detailed info by ID
   
-  [Što je moglo bolje...](./possibleImprovements.md)
+### [Što je moglo bolje...](./possibleImprovements.md)
