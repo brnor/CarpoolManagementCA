@@ -14,4 +14,4 @@
 - Poboljšati generiranje validacijskih grešaka
   - Za jednostavne validacije se koristi FluentValidation koji na detaljan generira puni izvještaj o grešci u response-u.
   - Za kompliciranije validacije obavljaju se "ručne" provjere i koriste custom iznimke koji nažalost nemaju izvještaj niti strukturu kao FluentValidation greške.
-  
+- Backend vraća 500 na sve nepostojeće rute
