@@ -29,12 +29,6 @@ class ModalRideshareForm extends Component {
                     <Modal.Body className={classes}>
                         <FormGroup>
                             {/* Start location */}
-                            {/* <label>Start location: </label>
-                            <input 
-                                type="text" 
-                                name="startLocation"
-                                value={startLocation}
-                                onChange={this.props.onChangeField} /> */}
                             <Form.Label>Start Location</Form.Label>
                             <Form.Control
                                 type="text"
@@ -70,13 +64,6 @@ class ModalRideshareForm extends Component {
                         <FormGroup>
                             {/* Car */}
                             <label>Car: </label>
-                            {/* <select onChange={this.props.onChangeCar} value={car.id}>
-                                {this.props.allCars.map((c, index) => {
-                                    return (
-                                        <option key={index} value={c.id}>{c.name}</option>
-                                    )
-                                })} 
-                            </select> */}
                             <Select
                                 onChange={this.props.onChangeCar}
                                 options={this.props.allCars.map((c) => {
@@ -108,7 +95,6 @@ class ModalRideshareForm extends Component {
                     </Modal.Body>
                     <Modal.Footer>
                         { /* Submit and Cancel buttons */}
-                        {/* <input type="submit" value="Submit" color="primary" className="btn btn-primary" /> */}
                         <Button type="submit" variant="primary">Submit</Button>
                         <Button variant="danger" onClick={this.props.handleClose}>Cancel</Button>
                     </Modal.Footer>

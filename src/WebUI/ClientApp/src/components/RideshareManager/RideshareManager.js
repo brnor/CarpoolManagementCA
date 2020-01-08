@@ -240,7 +240,7 @@ class RideshareManager extends Component {
         }
         
         return (
-            <React.Fragment>
+            <>
                 <ModalRideshareForm 
                     show={this.state.modalIsOpen} 
                     handleClose={this.modalCancelHandler} 
@@ -268,7 +268,7 @@ class RideshareManager extends Component {
                 <h1>Ride sharing management</h1>
                 <Button onClick={() => this.modalShowHandler("add", null)}>Add Item</Button>
                 {rideshares}
-            </React.Fragment>
+            </>
         );
     }
 }
