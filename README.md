@@ -66,4 +66,5 @@ serve -s -l 3000 ./CarpoolManagementCA/src/WebUI/bin/Release/netcoreapp3.1/publi
 - `/api/employees/{id}`
   - GET - gets an employee detailed info by ID
   
-### [Što je moglo bolje...](./possibleImprovements.md)
+### [Solution structure](./docs/solutionStructure.md)
+### [Što je moglo bolje...](./docs/possibleImprovements.md)
