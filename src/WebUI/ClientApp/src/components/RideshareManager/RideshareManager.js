@@ -170,7 +170,6 @@ class RideshareManager extends Component {
     }
 
     onSubmitAdd = (e) => {
-        // Call POST /rideshares
         let body = {
             ...this.state.rideshareDetail
         };
@@ -190,7 +189,6 @@ class RideshareManager extends Component {
     }
 
     onSubmitEdit = (e) => {
-        // Call PUT /rideshares/{id}
         let body = {
             ...this.state.rideshareDetail
         };

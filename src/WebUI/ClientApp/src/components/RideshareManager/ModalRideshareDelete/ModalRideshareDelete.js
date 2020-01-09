@@ -12,7 +12,6 @@ const modalRideshareDelete = (props) => (
                 {props.loading ? <Spinner animation="border" /> : null}
             </Modal.Body>
             <Modal.Footer>
-                {/* <input type="submit" value="Delete" color="primary" className="btn btn-primary" /> */}
                 <Button type="submit" variant="danger" >Delete</Button>
                 <Button variant="primary" onClick={props.handleClose}>Cancel</Button>
             </Modal.Footer>
