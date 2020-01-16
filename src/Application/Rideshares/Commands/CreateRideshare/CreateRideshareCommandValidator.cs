@@ -21,26 +21,14 @@ namespace Application.Rideshares.Commands.CreateRideshare
                     .WithMessage("End date can not be set in the past.");
             RuleFor(x => x.Car)
                 .NotEmpty();
+            RuleFor(x => x.Car.Id)
+                .NotEmpty()
+                .When(x => x.Car != null);
             RuleFor(x => x.Employees)
-                .NotEmpty();
-            When(x => x.Employees != null, () =>
-            {
-                RuleFor(x => x.Employees.Count)
-                .GreaterThanOrEqualTo(1)
+                .NotEmpty()
                     .WithMessage("Rideshare requires at least one employee.");
-            });
-        }
-    }
-
-    public class CreateRideshareCommandSubCarValidator : AbstractValidator<CreateRideshareCommand.SubCar>
-    {
-        public CreateRideshareCommandSubCarValidator()
-        {
-            When(x => x != null, () =>
-            {
-                RuleFor(x => x.Id)
-                    .NotEmpty();
-            });
+            RuleForEach(x => x.Employees)
+                .SetValidator(new CreateRideshareCommandSubEmployeeValidator());
         }
     }
 
@@ -48,11 +36,8 @@ namespace Application.Rideshares.Commands.CreateRideshare
     {
         public CreateRideshareCommandSubEmployeeValidator()
         {
-            When(x => x != null, () =>
-            {
-                RuleFor(x => x.Id)
-                    .NotEmpty();
-            });
+            RuleFor(x => x.Id)
+                .NotEmpty();
         }
     }
 }

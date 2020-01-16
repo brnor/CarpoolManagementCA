@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
 using System;
-using System.Data;
 
 namespace Application.Rideshares.Commands.UpdateRideshare
 {
@@ -24,25 +23,14 @@ namespace Application.Rideshares.Commands.UpdateRideshare
                     .WithMessage("End date can not be set in the past.");
             RuleFor(x => x.Car)
                 .NotEmpty();
-            RuleFor(x => x.Employees);
-            When(x => x.Employees != null, () =>
-            {
-                RuleFor(x => x.Employees.Count)
-                .GreaterThanOrEqualTo(1)
+            RuleFor(x => x.Car.Id)
+                .NotEmpty()
+                .When(x => x.Car != null);
+            RuleFor(x => x.Employees)
+                .NotEmpty()
                     .WithMessage("Rideshare requires at least one employee.");
-            });
-        }
-    }
-
-    public class UpdateRideshareCommandSubCarValidator : AbstractValidator<UpdateRideshareCommand.SubCar>
-    {
-        public UpdateRideshareCommandSubCarValidator()
-        {
-            When(x => x != null, () =>
-            {
-                RuleFor(x => x.Id)
-                    .NotEmpty();
-            });
+            RuleForEach(x => x.Employees)
+                .SetValidator(new UpdateRideshareCommandSubEmployeeValidator());
         }
     }
 
@@ -50,11 +38,8 @@ namespace Application.Rideshares.Commands.UpdateRideshare
     {
         public UpdateRideshareCommandSubEmployeeValidator()
         {
-            When(x => x != null, () =>
-            {
-                RuleFor(x => x.Id)
-                    .NotEmpty();
-            });
+            RuleFor(x => x.Id)
+                .NotEmpty();
         }
     }
 }
